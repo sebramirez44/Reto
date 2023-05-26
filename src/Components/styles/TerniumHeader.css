@@ -1,7 +1,20 @@
 @font-face {
-    font-family: "Trade-Gothic-LT-Bold", sans-serif;
-    src: url('/fonts/trade-Gothic-LT-Bold.ttf') format('truetype');
+    font-family: "TradeGothic LT";
+    src: url('/fonts/TradeGothic/Trade Gothic LT.ttf') format('truetype');
+    src: url('') format('truetype');
 }
+@font-face {
+    font-family: 'TradeGothic LT';
+    src: url('/fonts/TradeGothic/Trade Gothic LT Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Sabon MT";
+    src: url('/fonts/SabonMTStd/SabonMTStdRegular/Sabon MT Std Regular.otf') format('opentype');
+    src:url('') format('opentype')
+}
+
 .TerniumHeader nav {
     width:100%;
     background-color:rgb(255,51,0);
@@ -18,8 +31,10 @@
 }
 .TerniumHeader > nav > ul li {
     align-self:center;
-    font-size:1.5em;
-    font-family: 'Trade-Gothic-LT-Bold', 'sans-serif';
+    font-size:1.6em;
+    font-family: 'TradeGothic LT';
+    font-weight:bold;
+    /* font-family:'arial'; */
     font-weight:bold;
 }
 .TerniumHeader > nav > ul li:hover {
@@ -29,7 +44,7 @@
 .TerniumHeader > nav svg{
     width:100%;
     margin:10%;
-    
+    margin-right:0;
 }
 .TerniumHeader > nav {
     display:flex;
@@ -38,12 +53,16 @@
 }
 
 .svg_icon {
-  transform: scale(3);
+  transform: scale(2.2);
 }
 .iconbutton {
     align-self:center;
-    margin-right:5%;
+    margin-right:4%;
+    margin-left:2%;
 }
 .Ternium {
     transform: scale(0.8);
+}
+.UnityComponent { 
+    margin:1.5%;
 }

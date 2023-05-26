@@ -3,7 +3,7 @@ import Home from "./Home";
 import Puntuaciones from "./Puntuaciones";
 import Perfiles from "./Perfiles";
 import Perfil from "./Perfil";
-import UnityComponent from "./UnityComponent";
+import Juego from "./Juego";
 import IconButton from '@mui/material/IconButton';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
@@ -21,7 +21,9 @@ export default function TerniumHeader()  {
             case 'perfil':
                 return <Perfil/>;
             case 'game':
-                return <UnityComponent show={false}/>;
+                // se me hace que hay que aañdir algo para re-renderear toda la pagina cuando
+                // queramos entrar y salir del componente Juego
+                return <Juego />;
             default:
                 return <Home/>;
         }
@@ -38,7 +40,7 @@ export default function TerniumHeader()  {
                     <li onClick={() => setCurrentPage('perfil')}>Perfil</li>
                 </ul>
                 <div className="iconbutton">
-                <IconButton aria-label="delete" className="iconbutton" medium>
+                <IconButton aria-label="delete" className="iconbutton">
                     <AccountCircleIcon className="svg_icon"/>
                 </IconButton>
                 </div>

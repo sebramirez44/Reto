@@ -3,6 +3,8 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 // ['An error occurred running the Unity content on this page.', 'The error was:', 'TypeError: canvas is null']
 import "./styles/UnityComponent.css";
 window.alert=() => {};
+const width = 850;
+const height = 562.5;
 function UnityComponent() {
   alert("yaaayyy");
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
@@ -41,7 +43,7 @@ function UnityComponent() {
   );
   const loadingPercentage = Math.round(loadingProgression * 100);
   return (
-    <div className="UnityComponent" style={{ width: 1200, height: 675 }}>
+    <div className="UnityComponent" style={{ width: width, height: height }}>
       {isLoaded === false && (
         // We'll conditionally render the loading overlay if the Unity
         // Application is not loaded.
@@ -51,7 +53,7 @@ function UnityComponent() {
       )}
     <Unity
       unityProvider={unityProvider}
-      style={{ width: 1200, height: 675 }}
+      style={{ width: width, height: height }}
       devicePixelRatio={devicePixelRatio}
     />
     </div>
