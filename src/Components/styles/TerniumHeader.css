@@ -1,3 +1,4 @@
+/* algo de este codigo se jode la navbar */
 @font-face {
     font-family: "TradeGothic LT";
     src: url('/fonts/TradeGothic/Trade Gothic LT.ttf') format('truetype');
@@ -15,12 +16,16 @@
     url('/fonts/SabonMTStd/SabonMTStdRegular/Sabon MT Std Regular.otf') format('otf');
 }
 
-
-.TerniumHeader nav {
-    width:100%;
+.TerniumHeader nav  {
+    /* esto me detiene a cambiar el style de menu */
     background-color:rgb(255,51,0);
     display:flex;
     flex-direction:column;
+}
+#bar {
+    /* cambiar esto para cambiar el color del menu no hamburguesa */
+    /* tambien tal vez hacer desaparecer el logo de ternium cuando se abre el menu no se */
+    background-color:rgb(255,51,0);
 }
 .TerniumHeader > nav > ul {
     display:flex;
@@ -34,7 +39,7 @@
     font-size:1.6em;
     font-family: 'TradeGothic LT';
     font-weight:bold;
-    /* font-family:'arial'; */
+    font-family:'arial';
     font-weight:bold;
 }
 .TerniumHeader > nav > ul li:hover {
@@ -65,4 +70,4 @@
 }
 .UnityComponent { 
     margin:1.5%;
-}
+} 
