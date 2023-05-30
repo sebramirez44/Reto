@@ -72,7 +72,8 @@
     margin:1.5%;
 } 
 .bi-house-door-fill {
-    font-size:1.5em;
+    padding-top:5%;
+    font-size:1em;
     padding-right:0.3em;
     padding-left:0;
 }
@@ -80,10 +81,18 @@
     padding-left:0;
     margin-left:0;
     display:inline-flex;
-    align-items:center;
-    justify-content:flex-start;
+    /* align-items:center; */
+    /* justify-content:flex-start; */
 }
 .TerniumHeader svg {
     padding-left:0;
     margin-left:0;
+    padding-bottom:0;
+    margin-bottom:0;
+    /* probablemente agregar una media quer aqui porque en laptop se ve bien pero en mi compu grande no */
+    padding-bottom:10%;
+}
+.menu-item2 {
+    display:inline-flex;
+    align-items:center;
 }
