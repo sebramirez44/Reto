@@ -71,3 +71,19 @@
 .UnityComponent { 
     margin:1.5%;
 } 
+.bi-house-door-fill {
+    font-size:1.5em;
+    padding-right:0.3em;
+    padding-left:0;
+}
+.menu-item {
+    padding-left:0;
+    margin-left:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-start;
+}
+.TerniumHeader svg {
+    padding-left:0;
+    margin-left:0;
+}

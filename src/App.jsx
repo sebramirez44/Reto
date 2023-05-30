@@ -8,6 +8,8 @@ import Juego from './Components/Juego.jsx';
 import Perfil from './Components/Perfil.jsx';
 import Perfiles from './Components/Perfiles.jsx';
 import Puntuaciones from './Components/Puntuaciones.jsx';
+import Burger from './Components/Burger';
+import Menu from './Components/Menu';
 
 function App() {
   const [count, setCount] = useState(0)
