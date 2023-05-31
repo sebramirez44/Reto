@@ -2,11 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 // ['An error occurred running the Unity content on this page.', 'The error was:', 'TypeError: canvas is null']
 import "./styles/UnityComponent.css";
-window.alert=() => {};
 const width = 850;
 const height = 562.5;
 function UnityComponent() {
-  alert("yaaayyy");
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "temp/Build/temp.loader.js",
     dataUrl: "temp/Build/temp.data",

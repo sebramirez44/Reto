@@ -6,10 +6,11 @@ export default function Juego() {
     const url="localhost";
     // objeto que espero:
     // [{user: usuario, topScore: topScore},{user: usuario, topScore: topScore}]
+    window.alert=()=>{};
     const [top, setTop] = useState([{user:"user", score: 123},{user:"user2",score:432}, {user:"user3",score:342},{user:"user4",score:214},{user:"user5",score:432}]);
     async function GetJugadores() {
         try {
-            const response = await fetch(url)
+            const response = await fetch(url);
             if (!response.ok) {
                 throw new Error("Request fallo con el codigo" + response.status);
             }

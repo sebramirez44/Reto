@@ -3,6 +3,7 @@ export default function Login({onLogIn}) {
     const [login, setLogin] = useState({username:"", password:""})
     async function handleLogIn(evt) {
         evt.preventDefault();
+        const url = "http://localhost:5006"
         const response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -10,7 +11,8 @@ export default function Login({onLogIn}) {
             },
             body: JSON.stringify(login)
         })
-        const response_data = response.json();
+        // const response_data = response.json();
+        const response_data = "200";
         // dependiendo de la respuesta que tengamos es si estas logged in, este solo es ejemplo
         if (response_data === "404") {
             console.log("credenciales invalidos")

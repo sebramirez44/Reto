@@ -12,24 +12,29 @@ import Administracion from './Components/Administracion';
 import Login from './Components/Login';
 
 function App() {
-  const [login, setLogin] = useState({user: "", pwd: ""})
-  return (<Login/>)
+  const [isloggedin, setIsloggedin] = useState(false)
+  function loggedin() {
+    setIsloggedin(!isloggedin);
+  }
+  if (isloggedin === false) {
+    return (<Login onLogIn={loggedin}/>)
+  }
   // en realidad esto tiene que pasar cuando haga submit al form
-  useEffect(() => {
-    async function getLogin() {
-    const [submitted, setSubmitted] = useState(false);
-      //hacer un post request a la base de datos con el user y pass
-      const response = await fetch();
-      const jsonResponse = await response.json();
-      // si nos regresa que no se encontro el password hacemos algo, lo volvemos a ejecutar creo.
-      if (response == "404") {
-        // creo que quitar esto porque no hace lo que pienso
-        getLogin();
-      }
-      setLogin({user: response.user, pwd: response.pwd});
-    }
-    getLogin();
-  }, [])
+  // useEffect(() => {
+  //   async function getLogin() {
+  //   const [submitted, setSubmitted] = useState(false);
+  //     //hacer un post request a la base de datos con el user y pass
+  //     const response = await fetch();
+  //     const jsonResponse = await response.json();
+  //     // si nos regresa que no se encontro el password hacemos algo, lo volvemos a ejecutar creo.
+  //     if (response == "404") {
+  //       // creo que quitar esto porque no hace lo que pienso
+  //       getLogin();
+  //     }
+  //     setLogin({user: response.user, pwd: response.pwd});
+  //   }
+  //   getLogin();
+  // }, [])
 
   return (
     <>
