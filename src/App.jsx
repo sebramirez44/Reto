@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import UnityComponent from './Components/UnityComponent.jsx'
 import TerniumHeader from './Components/TerniumHeader'
@@ -8,11 +8,28 @@ import Juego from './Components/Juego.jsx';
 import Perfil from './Components/Perfil.jsx';
 import Perfiles from './Components/Perfiles.jsx';
 import Puntuaciones from './Components/Puntuaciones.jsx';
-import Burger from './Components/Burger';
-import Menu from './Components/Menu';
+import Administracion from './Components/Administracion';
+import Login from './Components/Login';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [login, setLogin] = useState({user: "", pwd: ""})
+  return (<Login/>)
+  // en realidad esto tiene que pasar cuando haga submit al form
+  useEffect(() => {
+    async function getLogin() {
+    const [submitted, setSubmitted] = useState(false);
+      //hacer un post request a la base de datos con el user y pass
+      const response = await fetch();
+      const jsonResponse = await response.json();
+      // si nos regresa que no se encontro el password hacemos algo, lo volvemos a ejecutar creo.
+      if (response == "404") {
+        // creo que quitar esto porque no hace lo que pienso
+        getLogin();
+      }
+      setLogin({user: response.user, pwd: response.pwd});
+    }
+    getLogin();
+  }, [])
 
   return (
     <>
@@ -23,8 +40,8 @@ function App() {
         <Route path="/Perfil" element={<Perfil/>} />
         <Route path="/Perfiles" element={<Perfiles/>} />
         <Route path="/Puntuaciones" element={<Puntuaciones />}/>
+        <Route path="/Administracion" element={<Administracion />}></Route>
       </Routes>
-      {/* <UnityComponent /> */}
     </>
   )
 }
