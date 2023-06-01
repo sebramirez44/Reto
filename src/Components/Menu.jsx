@@ -8,7 +8,6 @@ const Menu = ({ open, setOpen }) => {
     return (
       // Ocupa al componente StyledMenu
       <StyledMenu open={open}>
-        {/* agregar que onClick se cambia open supongo no se */}
         <NavLink to="/" className="menu-item2" onClick={handleClick}>
           <div className="menu-item">
           <svg role="img" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className="bi bi-house-door-fill" viewBox="0 0 16 16">

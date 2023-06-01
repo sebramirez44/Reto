@@ -17,7 +17,8 @@ function App() {
     setIsloggedin(!isloggedin);
   }
   if (isloggedin === false) {
-    return (<Login onLogIn={loggedin}/>)
+    // activar si esta el API activado
+    // return (<Login onLogIn={loggedin}/>)
   }
   // en realidad esto tiene que pasar cuando haga submit al form
   // useEffect(() => {

@@ -94,6 +94,7 @@ export default function TablaABC() {
 
                         
                             {/* hacer render view con el id para mostrar cada cosa del item con ese id, en este caso id solo es el index en la tabla */}
+                            {/* en chrome me sale el border de esto muy grande y en firefox no sale para nada esta muy raro */}
                             <td className="buttons"><div className="buttonsContainer"><button>Editar</button><button onClick={() => renderView(index)}>Ver</button><button>Eliminar</button></div></td>
                         </tr>
                     ))}
