@@ -1,11 +1,15 @@
 import {NavLink} from 'react-router-dom';
 import StyledMenu from './styles/StyledMenu.jsx';
 // un componente Menu
-const Menu = ({ open }) => {
+const Menu = ({ open, setOpen }) => {
+    function handleClick() {
+      setOpen(!open);
+    }
     return (
       // Ocupa al componente StyledMenu
       <StyledMenu open={open}>
-        <NavLink to="/" className="menu-item2">
+        {/* agregar que onClick se cambia open supongo no se */}
+        <NavLink to="/" className="menu-item2" onClick={handleClick}>
           <div className="menu-item">
           <svg role="img" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className="bi bi-house-door-fill" viewBox="0 0 16 16">
             <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
@@ -14,7 +18,7 @@ const Menu = ({ open }) => {
           </div>
           Home
         </NavLink>
-        <NavLink to="/Puntuaciones" className="menu-item2">
+        <NavLink to="/Puntuaciones" className="menu-item2" onClick={handleClick}>
           <div className="menu-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className="bi bi-diagram-2" viewBox="0 0 16 16">
               <path fillRule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM3 11.5A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
@@ -22,7 +26,7 @@ const Menu = ({ open }) => {
           </div>  
           Puntuaciones        
           </NavLink>
-          <NavLink to="/Perfiles" className="menu-item2">
+          <NavLink to="/Perfiles" className="menu-item2" onClick={handleClick}>
           <div className="menu-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className="bi bi-diagram-2" viewBox="0 0 16 16">
               <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
@@ -30,7 +34,7 @@ const Menu = ({ open }) => {
           </div>  
           Perfiles        
           </NavLink>
-          <NavLink to="/Juego" className="menu-item2">
+          <NavLink to="/Juego" className="menu-item2" onClick={handleClick}>
           <div className="menu-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className="bi bi-diagram-2" viewBox="0 0 16 16">
               <path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z"/>
@@ -40,7 +44,7 @@ const Menu = ({ open }) => {
           Juego        
           </NavLink>
           {/* este solo deberia aparecer cuando estas autenticado como administrador */}
-          <NavLink to="/Administracion" className="menu-item2">
+          <NavLink to="/Administracion" className="menu-item2" onClick={handleClick}>
           <div className="menu-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className="bi bi-diagram-2" viewBox="0 0 16 16">
               <path fillRule="evenodd" d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"/>

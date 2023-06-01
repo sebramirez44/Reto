@@ -7,13 +7,14 @@ import Burger from './Burger.jsx';
 
 import "./styles/TerniumHeader.css";
 export default function TerniumHeader()  {
+    // estado open, nos dice cuando se le dio click al burger
     const [open, setOpen] = React.useState(false);
     const node = React.useRef();
     return (
         <div className="TerniumHeader">
             {/* nav no es lo que se jode todo */}
             <nav id="bar">
-                <div class="left">
+                <div className="left">
                     <div ref={node} className="burger">
                         <Burger open={open} setOpen={setOpen} />
                         <Menu open={open} setOpen={setOpen} />
