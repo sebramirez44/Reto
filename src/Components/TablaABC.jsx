@@ -92,9 +92,7 @@ export default function TablaABC() {
                             <td style={{padding:"0.5em", textAlign:"center"}}>{item.cursosTomados}</td>
                             <td style={{padding:"0.5em", textAlign:"center"}}>{item.Managerial.toString()}</td>
 
-                            {/* {Object.keys(item).map(key => (
-                                <td key={key} style={{padding:"0.5em", textAlign:"center"}}>{item[key].toString()}</td>
-                            ))} */}
+                        
                             {/* hacer render view con el id para mostrar cada cosa del item con ese id, en este caso id solo es el index en la tabla */}
                             <td className="buttons"><div className="buttonsContainer"><button>Editar</button><button onClick={() => renderView(index)}>Ver</button><button>Eliminar</button></div></td>
                         </tr>
