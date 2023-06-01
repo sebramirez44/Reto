@@ -12,7 +12,6 @@ export default function TerniumHeader()  {
     const node = React.useRef();
     return (
         <div className="TerniumHeader">
-            {/* nav no es lo que se jode todo */}
             <nav id="bar">
                 <div className="left">
                     <div ref={node} className="burger">
