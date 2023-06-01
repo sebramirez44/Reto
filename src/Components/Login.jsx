@@ -18,11 +18,12 @@ export default function Login({onLogIn}) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(login)
-        })
+        });
+        const data = await response.json();
         // const response_data = response.json();
-        if (response.status === 404) {
+        if (data.login === false) {
             console.log("credenciales invalidos")
-        } else if (response.status === 200) {
+        } else if (data.login === true) {
             onLogIn();
         }
 
