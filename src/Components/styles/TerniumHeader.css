@@ -49,6 +49,7 @@
 .TerniumHeader > nav svg{
     width:100%;
     margin:10%;
+    margin-bottom:8%;
     margin-right:0;
 }
 .TerniumHeader > nav {
@@ -109,4 +110,10 @@
 .menu-item2 {
     display:inline-flex;
     align-items:center;
+}
+.logo__icon {
+    margin-left:2em;
+}
+.left {
+    display:flex;
 }

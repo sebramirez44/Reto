@@ -1,9 +1,17 @@
 import {useState} from "react";
 export default function Login({onLogIn}) {
     const [login, setLogin] = useState({username:"", password:""})
+    const [validUser, setValidUser] = useState(true);
     async function handleLogIn(evt) {
         evt.preventDefault();
-        const url = "http://localhost:5006"
+        const usuarioValido =  /^(?:[^\s@]+@ternium\.mx|[^@\s]+)$/;
+        if (!usuarioValido.test(login.username)) {
+            setValidUser(false);
+            return;
+        } else {
+            setValidUser(true);
+        }
+        const url = "http://localhost:5006";
         const response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -12,11 +20,9 @@ export default function Login({onLogIn}) {
             body: JSON.stringify(login)
         })
         // const response_data = response.json();
-        const response_data = "200";
-        // dependiendo de la respuesta que tengamos es si estas logged in, este solo es ejemplo
-        if (response_data === "404") {
+        if (response.status === 404) {
             console.log("credenciales invalidos")
-        } else if (response_data === "200") {
+        } else if (response.status === 200) {
             onLogIn();
         }
 
@@ -32,11 +38,8 @@ export default function Login({onLogIn}) {
             <div className="login">
                 <form action="">
                     <h1>Login</h1>
-                    {/* hacer que el valor de cada uno sea un estado */}
-                    {/* y que al cambiar el estado cambia el valor con onCHange */}
-                    {/* onSubmit del boton se manda lo que hay en estos estaods como un objeto ig al API */}
-                    {/* si el retorno de eso es dq ok o algo asi ya estas logged in. */}
                     <label htmlFor="username">Username:</label>
+                    {!validUser && <p style={{color:"red"}}>Poner un usuario valido</p>}
                     <input type="text" id="username" name="username" value={login.username} onChange={handleChange} />
                     <label htmlFor="password">Password:</label>
                     <input type="password" id="password" name="password" value={login.password} onChange={handleChange}/>
