@@ -65,18 +65,20 @@ export default function TablaABC() {
                 <thead>
                     <tr>
                         {/* info personal general */}
-                        <th style={{width:"13em"}}>nombre y Apellido(nomAp)</th>
-                        <th style={{width:"4em", paddingLeft:"0.3em", paddingRight:"1.2em"}}>Fecha de nacimiento</th>
-                        <th style={{width:"3em"}}>pais</th>
-                        <th style={{width:"4em"}}>Estado</th>
+                        {/* quiero que este primero sea rounded */}
+                        <th>nombre y Apellido(nomAp)</th>
+                        <th style={{width:"", paddingLeft:"0.3em", paddingRight:"1.2em"}}>Fecha de nacimiento</th>
+                        <th style={{width:""}}>pais</th>
+                        <th style={{width:""}}>Estado</th>
                         {/* gamestats */}
                         <th>Nivel(lvl)</th>
                         <th>topScore</th>
                         {/* tabla users */}
-                        <th>user</th>
-                        <th style={{width:"4em"}}>Cursos Tomados</th>
-                        <th style={{width:"4.5em", paddingLeft:"0.3em"}}>Managerial</th>
-                        <th style={{width: "10em"}}>Acciones</th>
+                        <th style={{width:""}}>user</th>
+                        <th style={{width:""}}>Cursos Tomados</th>
+                        <th style={{width:"", paddingLeft:"0.3em"}}>Managerial</th>
+                        {/* tambien quiero que este ultimo sea rounded */}
+                        <th style={{width: "15%"}}>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,7 +97,7 @@ export default function TablaABC() {
                         
                             {/* hacer render view con el id para mostrar cada cosa del item con ese id, en este caso id solo es el index en la tabla */}
                             {/* en chrome me sale el border de esto muy grande y en firefox no sale para nada esta muy raro */}
-                            <td className="buttons"><div className="buttonsContainer"><button>Editar</button><button onClick={() => renderView(index)}>Ver</button><button>Eliminar</button></div></td>
+                            <td className="buttons"><div className="buttonsContainer"><button className="edit-btn">Editar</button><button className="view-btn" onClick={() => renderView(index)}>Ver</button><button className="delete-btn">Eliminar</button></div></td>
                         </tr>
                     ))}
                 </tbody>

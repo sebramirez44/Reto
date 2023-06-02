@@ -1,10 +1,22 @@
 .TablaABC{
     border: 1px solid black;
-    margin:10%;
+    margin:5%;
     margin-top:10%;
-    border-collapse:collapse;
+    border-collapse:separate;
+    overflow: hidden;
     width:100%;
-    table-layout: fixed;
+    border-radius: 1em;
+    border-spacing: 0;
+    /* background-color:red; */
+    
+    /* table-layout: fixed; */
+}
+.TablaABC thead {
+    background-color:rgb(0,100,81);
+    color:white;
+}
+.TablaABC tbody {
+    background-color:rgb(212,212,212);
 }
 .TablaABC th {
     border:1px solid black;
@@ -23,13 +35,9 @@
     width:100%;
 }
 .TablaABC .buttons {
-    display:flex;
-    justify-content:center;
-    flex-direction:row;
-    align-content:center;
-    padding-top:0.5em;
-    padding-bottom:0.5em;
-    border:0.000000000001px solid black;
+
+    border:1px solid black;
+    
     /* cambiar esto porque no me gusta que este tan hard-coded */
 }
 
@@ -41,4 +49,37 @@
     border:none;
 
     /* cambiar esto porque no me gusta que este tan hard-coded */
+}
+.view-btn {
+    color:white;
+    background-color:rgb(1,104,138);
+    border-radius:0.2em;
+    border:1.5px solid black;
+    padding: 0.3em;
+    padding-left:0.5em;
+    padding-right:0.5em;
+}
+.view-btn:hover {
+    background-color: rgb(7, 84, 110);
+    cursor:pointer;
+}
+.delete-btn {
+    color:white;
+    border: 1.5px solid black;
+    border-radius:0.2em;
+    background-color:red;
+}
+.delete-btn:hover {
+    background-color:rgb(210, 19, 19);
+    cursor:pointer;
+}
+.edit-btn {
+    color:white;
+    border: 1.5px solid black;
+    border-radius:0.2em;
+    background-color:rgb(72,84,88);
+}
+.edit-btn:hover {
+    background-color: rgb(56, 62, 64);
+    cursor:pointer;
 }
